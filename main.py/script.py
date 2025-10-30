@@ -11,10 +11,10 @@ pygame.display.set_caption("Circle Animation")
 bgs = []
 banners = []
 gun = []
-level = 0
+level = 1
 for i in range(1, 4):
-    bgs.append(pygame.image.load(f"assets/bg/{i}.png"))
-    banners.append(pygame.image.load(f"assets/banner/{i}.png"))
+    bgs.append(pygame.image.load(f"assets/bgs/{i}.png"))
+    banners.append(pygame.image.load(f"assets/banners/{i}..png"))
     gun.append(pygame.image.load(f"assets/gun/{i}.png"))
 
 def draw_gun():
@@ -29,9 +29,9 @@ def draw_gun():
     angle = math.atan(slope)
     rotation = math.degrees(angle)
     if mouse_pos[0] < WIDTH / 2:
-        gun = pygame.transform.flip(gun[level - 1], True, False)
+        guns = pygame.transform.flip(gun[level - 1], True, False)
         if mouse_pos[1] < 600:
-            screen.blit(pygame.transform.rotate(gun, 90 - rotation), (WIDTH / 2 - 90, HEIGHT - 250))
+            screen.blit(pygame.transform.rotate(guns, 90 - rotation), (WIDTH / 2 - 90, HEIGHT - 250))
         if clicks[0]:
             pygame.draw.circle(screen, lasers[level - 1], mouse_pos, 5)
         else:
@@ -46,8 +46,8 @@ run = True
 while run:
     timer.tick(fps)
     screen.fill("black")
-    screen.blit(bgs[level, - 1], (0, 0))
-    screen.blit(banners[level, - 1], (0, HEIGHT - 200))
+    screen.blit(bgs[level - 1], (0, 0))
+    screen.blit(banners[level - 1], (0, HEIGHT - 200))
     if level > 0:
         draw_gun()
     for event in pygame.event.get():
