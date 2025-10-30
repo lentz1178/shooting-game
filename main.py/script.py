@@ -34,11 +34,11 @@ def draw_gun():
             screen.blit(pygame.transform.rotate(guns, 90 - rotation), (WIDTH / 2 - 90, HEIGHT - 250))
         if clicks[0]:
             pygame.draw.circle(screen, lasers[level - 1], mouse_pos, 5)
-        else:
-            guns = gun[level - 1]
+    else:
+        guns = gun[level - 1]
         if mouse_pos[1] < 600:
           screen.blit(pygame.transform.rotate(guns, 270 + rotation), (WIDTH / 2 - 30, HEIGHT - 250))
-          if clicks [0]:
+          if clicks[0]:
               pygame.draw.circle(screen, lasers[level - 1], mouse_pos, 5)
 
 
