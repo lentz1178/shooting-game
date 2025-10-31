@@ -1,5 +1,7 @@
+import os
 import pygame
 import math
+import importlib.resources as pkg_resources
 pygame.init()
 fps = 60
 timer = pygame.time.Clock()
